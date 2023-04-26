@@ -1,0 +1,23 @@
+int a = 5;
+string str = "This is a string";
+int sum(int a, int b)
+{
+int c = 5;
+return x+y;
+}
+int m = 4;
+string hello(string n)
+{
+int c = 6;
+return "Hello" + name;
+}
+int x = 5;
+int y = 10;
+int z = sum(x,y);
+string n = "Yusuf";
+print(hello(n));
+n = "Ali";
+print(hello(n));
+print(a);
+print(sum(5,1000/2));
+print("End Of Program");
