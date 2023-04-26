@@ -1,0 +1,2 @@
+l s −l &
+wc output1.txt &
