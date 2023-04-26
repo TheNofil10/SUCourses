@@ -1,0 +1,15 @@
+int vector digits, digits2 = [1,2,3,4,5,6,7,8,9,0];
+int matrixM = 3;
+int a = 5;
+real realNum = 4.0E-12;
+int resultV = a + matrixM;
+int finalResult = a + resultV * 5;
+int matrix result = [1,2;3,4;5,6;7,8;9,0];
+int matrix matrix_1 = [1.2,2.2;3.2,4.1];
+int matrix resultT = transpose(result);
+digits = digits * matrixM;
+int dotProduct = digits .* digits;
+if(dotProduct <= matrixM || dotProduct >= result)
+	resultT = resultT * dotProduct;
+endif
+resultT = b;

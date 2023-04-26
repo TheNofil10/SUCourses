@@ -1,0 +1,40 @@
+%{
+//(Important!) Include the correct header file.
+#include <stdio.h>
+#include "aeshmawy-ex1.tab.h"
+extern int lineno = 1;
+
+%}
+%option yylineno
+
+IDENT [a-zA-Z_][a-zA-Z0-9_]*
+INT -?[0-9]+(E[0-9]+)?
+
+
+%%
+"int" return tINT;
+"string" return tSTRING;
+"return" return tRETURN;
+"print" return tPRINT;
+"=" return tASSIGNM;
+"("  return tLPAR;
+")"  return tRPAR;
+"%" return tMOD;
+"-" return tMINUS;
+"+" return tPLUS;
+"*" return tSTAR;
+"{" return tLBRAC;
+"}" return tRBRAC;
+";" return tSEMI;
+"/" return tDIV;
+"," return tCOMMA;
+["][^"]*["] return tSTRINGVAL;
+{IDENT} {yylval.varname =  strdup(yytext);
+return tIDENT;}
+{INT} return tINTVAL;
+
+[ \t\r]
+[\n] {lineno++;}
+. {
+return yytext[0]; }
+%%

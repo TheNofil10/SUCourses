@@ -1,0 +1,52 @@
+%{
+//(Important!) Include the correct header file.
+#include "parser.tab.h"
+#include <math.h>
+#include <stdio.h>
+int yylex(void);
+void yyerror(char const*);
+%}
+
+%token <type> tINTTYPE
+%token <type> tINTVECTORTYPE
+%token <type> tINTMATRIXTYPE
+%token <type> tREALTYPE
+%token <type> tREALVECTORTYPE
+%token <type> tREALMATRIXTYPE
+%token <transpose> tTRANSPOSE
+%token <vars> tIDENT
+%token tDOTPROD
+%token <if> tIF
+%token tENDIF
+%token <value> tREALNUM
+%token <value> tINTNUM
+%token <bool> tAND
+%token <bool> tOR
+%token <comp> tGT
+%token <comp> tLT
+%token <comp> tGTE
+%token <comp> tLTE
+%token <relation> tNE
+%token <relation> tEQ
+%token <asgn> "="
+%start <prog> 
+
+%union {
+	double value;
+	int value;
+}
+
+%%
+
+asgn: vars asgn vars '+' vars ';' |
+	
+	;
+type: int 
+
+
+%%
+
+int main (void)
+{
+return yyparse();
+}
